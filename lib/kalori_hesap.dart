@@ -69,7 +69,7 @@ class _KaloriHesapState extends State<KaloriHesap> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Kalori Hesabı"),
-        backgroundColor: Color(0xFF0A0D22),
+        backgroundColor:Color(0xFF1D1F33) ,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
