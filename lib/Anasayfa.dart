@@ -1,14 +1,14 @@
+import 'package:boykiloindeks/home_page.dart';
 import 'package:flutter/material.dart';
-import 'home_page.dart';
 
-class deneme extends StatelessWidget {
-  const deneme({Key key}) : super(key: key);
+class Anasayfa extends StatelessWidget {
+  const Anasayfa({Key key}) : super(key: key);
 
   static const String _title = 'Flutter Code Sample';
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return new MaterialApp(
       title: _title,
       home: MyStatefulWidget(),
     );
@@ -29,6 +29,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static List<Widget> _widgetOptions = <Widget>[
     Home_Page(),
     Home_Page(),
+    Home_Page(),
   ];
 
   void _onItemTapped(int index) {
@@ -41,27 +42,32 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:const Center(child:Text('E-Fit'),),
-        backgroundColor: Color.fromARGB(255, 44, 47, 80),
+        title: const Center(child:Text('E-Fit'),),
+        backgroundColor: Color(0xFF1D1F33),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
+      backgroundColor: Colors.white,
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor:Color(0xFF1D1F33),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            label: 'Profile',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.calculate),
-            label: 'Calculate',
+            label: 'Hesaplama',
           ),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.pink,
         onTap: _onItemTapped,
-        backgroundColor: Color.fromARGB(255, 44, 47, 80),
       ),
     );
   }

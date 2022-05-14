@@ -13,10 +13,6 @@ class _Home_PageState extends State<Home_Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-      title:const Center(child:Text('E-Fit'),),
-      backgroundColor: Color.fromARGB(255, 44, 47, 80),
-      ),
       backgroundColor: Color(0xFF1D1F33),
       body:Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,7 +40,6 @@ class _Home_PageState extends State<Home_Page> {
                     child: Icon(
                       Icons.local_hospital,
                       size: 30,
-                      color: Colors.white,
                     ),
                   ),
                   Padding(
@@ -81,7 +76,6 @@ class _Home_PageState extends State<Home_Page> {
                     child: Icon(
                       Icons.local_hospital,
                       size: 30,
-                      color: Colors.white,
                     ),
                   ),
                   Padding(
@@ -118,7 +112,6 @@ class _Home_PageState extends State<Home_Page> {
                     child: Icon(
                       Icons.food_bank,
                       size: 30,
-                      color: Colors.white,
                     ),
                   ),
                   Padding(
