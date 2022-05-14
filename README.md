@@ -2,7 +2,7 @@
 
 Sağlıklı beslenmek ve fit kalmak için kullanılması gereken bir uygulama.
 
-## Getting Started
+
 
 This project is a starting point for a Flutter application.
 
