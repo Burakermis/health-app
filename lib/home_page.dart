@@ -1,3 +1,6 @@
+import 'package:boykiloindeks/Urun_Bilgi.dart';
+import 'package:boykiloindeks/login.dart';
+import 'package:boykiloindeks/register.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'veri_giris.dart';
@@ -13,6 +16,39 @@ class _Home_PageState extends State<Home_Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title:const Center(child:Text('E-Fit')),
+        backgroundColor: Color(0xFF1D1F33),
+      ),
+      drawer: Drawer(//drawer menu login ekranı
+    child: ListView(
+    padding: EdgeInsets.zero,
+    children: [
+      const DrawerHeader(
+        decoration: BoxDecoration(
+          color: Color(0xFF1D1F33),
+        ),
+        child: Text('E-Fit'),
+      ),
+      ListTile(
+        title: const Text('Kayıt ol'),
+        onTap: () {
+          Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => RegisterPage()));
+        },
+      ),
+      ListTile(
+        title: const Text('Giriş yap'),
+       onTap: () {
+          Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => LoginPage()));
+        },
+      ),
+    ],
+  ),
+),
       backgroundColor: Color(0xFF1D1F33),
       body:Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -92,14 +128,13 @@ class _Home_PageState extends State<Home_Page> {
               ),
             ),
           ),
-          FlatButton(
-            onPressed: () {
+         FlatButton(
+            onPressed: (){
               setState(() {
-                Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (BuildContext context) => RemoteJson()));
+                Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) =>  RemoteJson()));
               });
             },
-            child: Container(
+            child:Container(
               width: double.infinity,
               height: 75,
               color: Color.fromARGB(255, 44, 47, 80),
@@ -110,19 +145,17 @@ class _Home_PageState extends State<Home_Page> {
                   ),
                   Center(
                     child: Icon(
-                      Icons.food_bank,
+                      Icons.local_hospital,
                       size: 30,
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 20),
+                    padding: EdgeInsets.only(left : 20),
                   ),
                   Text(
-                    "Besin Bilgileri",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
+                    "Besin Bilgileri",style: TextStyle(
+                    fontSize: 20,
+                  ),
                   )
                 ],
               ),

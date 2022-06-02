@@ -22,7 +22,7 @@ class _VeriGirisState extends State<VeriGiris> {
   Color erkekKartRenk = kInactiveKartRenk;
   Color kadinKartRenk = kInactiveKartRenk;
 
-  Cinsiyet seciliCinsiyet;
+  Cinsiyet? seciliCinsiyet;
   int boy = 180;
   int kilo = 60;
   int yas = 20;
@@ -42,9 +42,10 @@ class _VeriGirisState extends State<VeriGiris> {
                   Expanded(
                       child: Reusable_Card(
                         cnstyTiklama: (){
-                          setState(() {
+                          //setState(() {
                             seciliCinsiyet= Cinsiyet.erkek;
-                          });
+                        //}
+                          //);
                         },
                         renk: seciliCinsiyet == Cinsiyet.erkek ? kAktifKartRengi : kInactiveKartRenk,
                         CardChild: IkonIcerik(ikon: FontAwesomeIcons.mars,
@@ -53,9 +54,9 @@ class _VeriGirisState extends State<VeriGiris> {
                   )),
                   Expanded(child: Reusable_Card(
                     cnstyTiklama: (){
-                      setState(() {
+                      //setState(() {
                         seciliCinsiyet= Cinsiyet.kadin;
-                      });
+                      //});
                     },
                     renk: seciliCinsiyet == Cinsiyet.kadin ? kAktifKartRengi : kInactiveKartRenk,
                     CardChild: IkonIcerik(ikon: FontAwesomeIcons.venus,
@@ -91,14 +92,14 @@ class _VeriGirisState extends State<VeriGiris> {
                         activeColor: Color(0xFFEB1555),
                         inactiveColor: Color(0xFF8D8E98),
                         onChanged: (double yeniBoyDeger){
-                          setState(() {
+                          //setState(() {
                             boy = yeniBoyDeger.round();
-                          });
+                          //});
                         },
                       ),
                     ],
                   )
-                  ),
+                  ), cnstyTiklama: (){},
                 )), // SLİDER BÖLÜMÜ
 
             Expanded(
@@ -121,9 +122,9 @@ class _VeriGirisState extends State<VeriGiris> {
                             yuvarlakIkonButon(
                              ikon: FontAwesomeIcons.minus,
                               tiklama: (){
-                               setState(() {
+                               //setState(() {
                                  kilo--;
-                               });
+                               //});
                               },
                             ),
                             SizedBox(
@@ -132,15 +133,15 @@ class _VeriGirisState extends State<VeriGiris> {
                             yuvarlakIkonButon(
                               ikon: FontAwesomeIcons.plus,
                               tiklama: (){
-                                setState(() {
+                                //setState(() {
                                   kilo++;
-                                });
+                                //});
                               },
                             )
                           ],
                         )
                       ],
-                    ),
+                    ), cnstyTiklama: (){},
                   )
                   ),
                   Expanded(child: Reusable_Card(
@@ -156,9 +157,9 @@ class _VeriGirisState extends State<VeriGiris> {
                             yuvarlakIkonButon(
                               ikon: FontAwesomeIcons.minus,
                               tiklama: (){
-                                setState(() {
+                                //setState(() {
                                   yas--;
-                                });
+                                //});
                               },
                             ),
                             SizedBox(
@@ -167,15 +168,15 @@ class _VeriGirisState extends State<VeriGiris> {
                             yuvarlakIkonButon(
                               ikon: FontAwesomeIcons.plus,
                               tiklama: (){
-                                setState(() {
+                                //setState(() {
                                   yas++;
-                                });
+                                //});
                               },
                             ),
                           ],
                         ),
                       ],
-                    ),
+                    ), cnstyTiklama: (){},
                   ))
                 ],
               ),
@@ -203,14 +204,14 @@ class _VeriGirisState extends State<VeriGiris> {
 }
 
 class yuvarlakIkonButon extends StatelessWidget {
-  yuvarlakIkonButon({@required this.ikon,@required this.tiklama});
+  yuvarlakIkonButon({required this.ikon,required this.tiklama});
   final IconData ikon;
   final Function tiklama;
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
       child: Icon(ikon),
-      onPressed: tiklama,
+      onPressed: tiklama(),
       elevation: 6.0,
       constraints:  BoxConstraints.tightFor(
         width: 56.0,

@@ -16,7 +16,7 @@ class _RemoteJsonState extends State<RemoteJson> {
 
 
   Future<List<Urunler>> _getUrunler() async{
-    var empData=await http.get("https://api.jsonbin.io/b/6240947b0618276743808a9b");
+    var empData=await http.get(Uri.parse("https://api.jsonbin.io/b/6240947b0618276743808a9b"));
 
     var jsonData=json.decode(empData.body);
     List<Urunler> urunlerrr=[];

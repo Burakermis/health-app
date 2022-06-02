@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'sabitler.dart';
 
 class IkonIcerik extends StatelessWidget {
-  IkonIcerik({@required this.ikon, this.text});
+  IkonIcerik({required this.ikon, required this.text});
   final IconData ikon;
   final String text;
 

@@ -17,7 +17,7 @@ class KaloriHesap extends StatefulWidget {
 
 class _KaloriHesapState extends State<KaloriHesap> {
   //
-  int selectedRadio;
+  int? selectedRadio;
 
   @override
   void initState() {
@@ -25,7 +25,7 @@ class _KaloriHesapState extends State<KaloriHesap> {
     selectedRadio = 0;
   }
 
-  setSelectedRadio(int val) {
+  setSelectedRadio(int? val) {
     setState(() {
       selectedRadio = val;
     });
@@ -37,7 +37,7 @@ class _KaloriHesapState extends State<KaloriHesap> {
 
   @override
   List<DropdownMenuItem<String>> listDrop = [];
-  String selected = null;
+  String? selected = null;
 
 
   void loadData() {
@@ -87,7 +87,7 @@ class _KaloriHesapState extends State<KaloriHesap> {
                     "Erkek",
                     style: TextStyle(fontSize: 20),
                   ),
-                  Radio(
+                  Radio<int>(
                     value: 1,
                     groupValue: selectedRadio,
                     activeColor: Colors.blue,
@@ -101,7 +101,7 @@ class _KaloriHesapState extends State<KaloriHesap> {
               ),
               Row(
                 children: [
-                  Radio(
+                  Radio<int>(
                     value: 2,
                     groupValue: selectedRadio,
                     activeColor: Colors.pinkAccent,
@@ -158,7 +158,7 @@ class _KaloriHesapState extends State<KaloriHesap> {
                   },
                 ),
               ],
-            )),
+            )), cnstyTiklama: (){},
           )),
           Expanded(
             child: Row(
@@ -183,9 +183,9 @@ class _KaloriHesapState extends State<KaloriHesap> {
                           yuvarlakIkonButon(
                             ikon: FontAwesomeIcons.minus,
                             tiklama: () {
-                              setState(() {
+                              //setState(() {
                                 kilo--;
-                              });
+                              //});
                             },
                           ),
                           SizedBox(
@@ -194,15 +194,15 @@ class _KaloriHesapState extends State<KaloriHesap> {
                           yuvarlakIkonButon(
                             ikon: FontAwesomeIcons.plus,
                             tiklama: () {
-                              setState(() {
+                              //setState(() {
                                 kilo++;
-                              });
+                              //});
                             },
                           )
                         ],
                       )
                     ],
-                  ),
+                  ), cnstyTiklama: (){},
                 )),
                 Expanded(
                     child: Reusable_Card(
@@ -224,9 +224,9 @@ class _KaloriHesapState extends State<KaloriHesap> {
                           yuvarlakIkonButon(
                             ikon: FontAwesomeIcons.minus,
                             tiklama: () {
-                              setState(() {
+                              //setState(() {
                                 yas--;
-                              });
+                              //});
                             },
                           ),
                           SizedBox(
@@ -235,15 +235,15 @@ class _KaloriHesapState extends State<KaloriHesap> {
                           yuvarlakIkonButon(
                             ikon: FontAwesomeIcons.plus,
                             tiklama: () {
-                              setState(() {
+                              //setState(() {
                                 yas++;
-                              });
+                              //});
                             },
                           ),
                         ],
                       ),
                     ],
-                  ),
+                  ), cnstyTiklama: (){},
                 ))
               ],
             ),
@@ -263,10 +263,10 @@ class _KaloriHesapState extends State<KaloriHesap> {
                 value: selected,
                 hint: new Text("Lütfen Seçim Yapınız"),
                 onChanged: (value) {
-                  selected = value;
-                  setState(() {
+                  selected = value as String?;
+                  //setState(() {
                     print(selected);
-                  });
+                  //});
                 },
               ),
             ],
@@ -287,7 +287,7 @@ class _KaloriHesapState extends State<KaloriHesap> {
                       Kiloo: kilo,
                       Yass: yas,
                       Cinsiyet: selectedRadio.toString(),
-                      Calisma: selected,
+                      Calisma: selected as String,
                     ),
                   ),
                 );
@@ -312,7 +312,7 @@ class _KaloriHesapState extends State<KaloriHesap> {
 }
 
 class yuvarlakIkonButon extends StatelessWidget {
-  yuvarlakIkonButon({@required this.ikon, @required this.tiklama});
+  yuvarlakIkonButon({required this.ikon, required this.tiklama});
 
   final IconData ikon;
   final Function tiklama;
@@ -321,7 +321,7 @@ class yuvarlakIkonButon extends StatelessWidget {
   Widget build(BuildContext context) {
     return RawMaterialButton(
       child: Icon(ikon),
-      onPressed: tiklama,
+      onPressed: tiklama(),
       elevation: 6.0,
       constraints: BoxConstraints.tightFor(
         width: 56.0,

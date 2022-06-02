@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 class BKIHesap{
   BKIHesap( {this.bireyBoy,this.bireyKilo} );
-  final int bireyBoy;
-  final int bireyKilo;
-   double _bki;
+  final int? bireyBoy;
+  final int? bireyKilo;
+  late double _bki;
 
   String bkihesapla(){
-    _bki = bireyKilo/pow(bireyBoy/100,2);
+    _bki = bireyKilo!/pow(bireyBoy!/100,2);
     return _bki.toStringAsFixed(1);
   }
 

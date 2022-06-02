@@ -1,11 +1,16 @@
-import 'package:boykiloindeks/deneme.dart';
+
 import 'package:boykiloindeks/home_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'firebase_options.dart';
 import 'veri_giris.dart';
-import 'Anasayfa.dart';
 
 
-void main() => runApp(Efit());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
+  runApp(Efit());
+}
 
 class Efit extends StatelessWidget {
   @override
@@ -16,7 +21,7 @@ class Efit extends StatelessWidget {
         primaryColor: Color(0xFF1D1F33),
         scaffoldBackgroundColor: Color(0xFF1D1F33),
       ),
-      home:deneme(),
+      home:Home_Page(),
     );
   }
 }
