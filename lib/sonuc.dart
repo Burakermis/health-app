@@ -3,7 +3,7 @@ import 'package:boykiloindeks/reuseble_card.dart';
 import 'package:boykiloindeks/sabitler.dart';
 import 'package:flutter/material.dart';
 class SonucSayfasi extends StatelessWidget {
-  SonucSayfasi( {required this.bkiAciklama, required this.bkiDeger,required this.bkiSinif});
+  SonucSayfasi( {@required this.bkiAciklama, @required this.bkiDeger,@required this.bkiSinif});
 
   final String bkiSinif;
   final String bkiDeger;
@@ -15,7 +15,6 @@ class SonucSayfasi extends StatelessWidget {
         title: Text(
           'Beden Kitle İndeksi Hesapla',
         ),
-        backgroundColor: Color(0xFF0A0D22)
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -49,7 +48,7 @@ class SonucSayfasi extends StatelessWidget {
                  ),
 
                ],
-             ), cnstyTiklama:(){},
+             ),
            ),
          ),
           GestureDetector(

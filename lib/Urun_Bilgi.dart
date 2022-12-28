@@ -16,7 +16,7 @@ class _RemoteJsonState extends State<RemoteJson> {
 
 
   Future<List<Urunler>> _getUrunler() async{
-    var empData=await http.get(Uri.parse("https://api.jsonbin.io/b/6240947b0618276743808a9b"));
+    var empData=await http.get("https://api.jsonbin.io/b/6240947b0618276743808a9b");
 
     var jsonData=json.decode(empData.body);
     List<Urunler> urunlerrr=[];
@@ -37,7 +37,6 @@ class _RemoteJsonState extends State<RemoteJson> {
             fontWeight: FontWeight.bold
         ),),
         centerTitle: true,
-        backgroundColor: Color(0xFF0A0D22)
       ),
       body: Container(
         child: FutureBuilder(
@@ -48,7 +47,7 @@ class _RemoteJsonState extends State<RemoteJson> {
                   child: Center(child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("E-fit Sağlık"),
+                      Text("Reena Sağlık"),
                       Padding(padding: EdgeInsets.only(top: 20),),
                       Text("Loading..."),
                     ],

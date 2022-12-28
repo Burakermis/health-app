@@ -1,27 +1,20 @@
-
-import 'package:boykiloindeks/home_page.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'firebase_options.dart';
 import 'veri_giris.dart';
+import 'home_page.dart';
 
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
-  runApp(Efit());
-}
+void main() => runApp(BKIhesap());
 
-class Efit extends StatelessWidget {
+class BKIhesap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        primaryColor: Color(0xFF1D1F33),
-        scaffoldBackgroundColor: Color(0xFF1D1F33),
+        primaryColor: Color(0xFF0A0D22),
+        scaffoldBackgroundColor: Color(0xFF0A0D22),
       ),
-      home:Home_Page(),
+      home: Home_Page(),
     );
   }
 }

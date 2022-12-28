@@ -1,6 +1,6 @@
-# Flutter Health App
+# boykiloindeks
 
-Sağlıklı beslenmek ve fit kalmak için kullanılması gereken bir uygulama.
+A new Flutter application.
 
 ## Getting Started
 

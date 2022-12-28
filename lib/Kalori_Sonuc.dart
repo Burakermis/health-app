@@ -11,9 +11,9 @@ class KaloriSonuc extends StatelessWidget {
   final int Yass;
   final String Cinsiyet;
   final String Calisma;
-  KaloriSonuc( {required this.Boyy, required this.Kiloo,required this.Yass, required this.Cinsiyet, required this.Calisma});
+  KaloriSonuc( {@required this.Boyy, @required this.Kiloo,@required this.Yass, @required this.Cinsiyet, @required this.Calisma});
 
-   double? KaloriHesap(){
+   double KaloriHesap(){
      if(Cinsiyet=="1")
        {
          double BMR = 66+(13.7*Kiloo) + (5*Boyy) - (6.8*Yass);
@@ -114,7 +114,6 @@ class KaloriSonuc extends StatelessWidget {
         title: Text(
           'Kalori Hesabı',
         ),
-        backgroundColor: Color(0xFF0A0D22),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -144,14 +143,14 @@ class KaloriSonuc extends StatelessWidget {
                     padding: EdgeInsets.only(top: 30),
                   ),
                   Text(
-                    KaloriHesap()!.toStringAsFixed(0)+" Kalori",style: TextStyle(
+                    KaloriHesap().toStringAsFixed(0)+" Kalori",style: TextStyle(
                     fontSize: 30,
                     color: Colors.green,
                     fontWeight: FontWeight.bold
                   ),
                   ),
                 ],
-              ), cnstyTiklama: (){},
+              ),
             ),
           ),
           GestureDetector(

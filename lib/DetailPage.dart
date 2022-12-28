@@ -29,7 +29,6 @@ class DetailPage extends StatelessWidget {
       backgroundColor: Color(0xFF0A0D22),
       appBar: AppBar(
         title: Text(urunAd),
-        backgroundColor: Color(0xFF0A0D22)
       ),
       body: Container(
         padding: EdgeInsets.all(25.0),
