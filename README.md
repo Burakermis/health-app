@@ -1,6 +1,4 @@
-# boykiloindeks
-
-A new Flutter application.
+# Boy Kilo Endeks
 
 <img src="https://github.com/Burakermis/HealthApp/blob/main/projectimages/1.PNG?raw=true" width="320" height="500">
 <img src="https://github.com/Burakermis/HealthApp/blob/main/projectimages/2.PNG?raw=true" width="320" height="500">
